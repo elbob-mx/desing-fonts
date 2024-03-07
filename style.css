@@ -1,104 +1,111 @@
+/* desktop */
 * {
+  box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
-
 html,
 body {
-  height: 100%;
-  margin: 0px;
-  box-sizing: border-box;
-}
-
-body {
   background-color: whitesmoke;
-  width: 100%;
-  height: 100vh;
+  margin: 0 auto;
+  min-height: 100vh;
 }
-
 header {
+  background-color: #2a363b;
+  color: #f2f2f2;
   margin-bottom: 40px;
-  background-color: #181818;
   padding: 2rem;
-  color: whitesmoke;
 }
-
 h1 {
   font-family: "Archivo", sans-serif;
   font-size: 6rem;
-  margin: 0;
-  text-transform: uppercase;
   font-weight: 400;
+  text-transform: uppercase;
 }
-
+sup {
+  font-size: 2rem;
+}
 h2 {
   font-family: "Source Code Pro", monospace;
-  font-size: 1rem;
-  font-weight: 500;
-  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 400;
 }
-
 h3 {
   background-color: #181818;
   color: white;
   font-family: "Archivo", sans-serif;
-  font-weight: 600;
-  margin-top: 0;
-  margin-bottom: 12px;
   font-size: 2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  padding-right: 10px;
+  margin-top: 0;
   width: fit-content;
 }
-
 .card-container {
-  padding: 2rem;
-  width: 100%;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+  padding: 2rem;
+  flex-grow: 1;
+  justify-content: space-between;
+  row-gap: 40px 40px;
 }
-
 .card {
-  width: 25%;
-  padding: 0;
-  margin: 0 10px;
+  margin: 20px 20px 100px 20px;
+  flex-basis: 20%;
 }
 
+/* mobile */
 @media (max-width: 767px) {
+  header {
+    background-color: #2a363b;
+    color: #f2f2f2;
+    margin-bottom: 40px;
+    padding: 2rem;
+    position: sticky;
+    top: 0%;
+  }
   h1 {
-    font-size: 5rem;
+    font-size: 3rem;
+  }
+  sup {
+    font-size: 1.5rem;
   }
 
   .card-container {
-    padding: 0;
     display: flex;
     flex-direction: column;
-    width: 100%;
+    flex-wrap: wrap;
+    padding: 2rem;
   }
   .card {
+    margin: 20px 20px 60px 20px;
     padding: 0;
-    margin: 20px;
     width: -webkit-fill-available;
+    flex-basis: 100%;
   }
   .card a {
     font-size: 1.5rem;
   }
 }
 
+/* desktop */
 li {
   list-style-type: none;
   padding-top: 20px;
 }
-
 li a {
-  font-family: "Archivo Narrow", sans-serif;
   color: #181818;
+  font-family: "Archivo Narrow", sans-serif;
+  font-size: 1.3rem;
+  padding: 3px 4px 3px 4px;
   text-decoration: none;
   transition: 300ms;
-  padding: 3px 4px 3px 4px;
-  font-size: 1.3rem;
 }
-
 li a:hover {
-  transition: 300ms;
-  color: #f2f2f2;
   background-color: #181818;
-  padding: 3px 4px 3px 4px;
+  color: #f2f2f2;
+  padding: 3px 12px 3px 4px;
+  transition: 300ms;
 }
