@@ -38,7 +38,7 @@ h3 {
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 10px;
-  padding-right: 10px;
+  padding: 20px 15px 2px 5px;
   margin-top: 0;
   width: fit-content;
 }
@@ -52,7 +52,7 @@ h3 {
   row-gap: 40px 40px;
 }
 .card {
-  margin: 20px 20px 100px 20px;
+  margin: 0 0 60px 0;
   flex-basis: 20%;
 }
 
@@ -80,7 +80,7 @@ h3 {
     padding: 2rem;
   }
   .card {
-    margin: 20px 20px 60px 20px;
+    margin: 20px 0px 60px 20px;
     padding: 0;
     width: -webkit-fill-available;
     flex-basis: 100%;
@@ -98,7 +98,7 @@ li {
 li a {
   color: #181818;
   font-family: "Archivo Narrow", sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   padding: 3px 4px 3px 4px;
   text-decoration: none;
   transition: 300ms;
@@ -107,5 +107,5 @@ li a:hover {
   background-color: #181818;
   color: #f2f2f2;
   padding: 3px 12px 3px 4px;
-  transition: 300ms;
+  transition: 400ms;
 }
