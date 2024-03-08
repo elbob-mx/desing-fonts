@@ -1,7 +1,7 @@
 /* desktop */
 * {
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Archivo", sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,32 +9,76 @@ html,
 body {
   background-color: whitesmoke;
   margin: 0 auto;
-  min-height: 100vh;
+  min-height: 100%;
 }
 header {
-  background-color: #2a363b;
+  width: 100%;
+  position: sticky;
+  top: 0;
   color: #f2f2f2;
-  padding: 2rem;
+  z-index: 50;
 }
-#dropdown {
-  background-color: lightgray;
+#heading {
+  padding: 2rem;
+  background-color: #181818;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
   text-align: center;
-  padding: 20px 0 20px;
+  padding: 10px 0;
+  font-size: 1.4rem;
   font-weight: bold;
+  display: inline-block;
+  border-bottom: 1px solid #181818;
+  background-color: #f2f2f2;
+  z-index: 50;
+}
+.dropdown-hover {
+  display: inline-block;
+  padding: 10px;
+  background-color: #f2f2f2;
+  color: #181818;
+  font-size: larger;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  width: 100%;
+  transition: 300ms;
+}
+.dropdown-hover:hover {
+  width: 100%;
+  background-color: #a7f3d0;
+  transition: 300ms;
+}
+.dropdown-menu {
+  position: absolute;
+  /* display: none; */
+  top: 100%;
+  left: 0;
+  min-width: 100%;
+  background-color: #f2f2f2;
+}
+.dropdown:hover .dropdown-menu {
+  display: block;
 }
 h1 {
   font-family: "Archivo", sans-serif;
-  font-size: 6rem;
+  font-size: 7rem;
   font-weight: 400;
-  text-transform: uppercase;
-}
-sup {
-  font-size: 2rem;
+  /* text-transform: uppercase; */
+  height: fit-content;
 }
 h2 {
-  font-family: "Source Code Pro", monospace;
-  font-size: 1.25rem;
-  font-weight: 400;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.4rem;
+  font-weight: lighter;
+}
+sup {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3rem;
+  color: #a7f3d0;
 }
 h3 {
   background-color: #181818;
@@ -42,19 +86,18 @@ h3 {
   font-family: "Archivo", sans-serif;
   font-size: 2rem;
   font-weight: 500;
-  margin-bottom: 10px;
   padding: 20px 15px 2px 5px;
   margin-top: 0;
-  width: fit-content;
+  width: 100%;
 }
 .card-container {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 4rem 2rem;
   flex-grow: 1;
   justify-content: space-between;
-  row-gap: 40px 40px;
+  gap: 30px;
 }
 .card {
   margin: 0 0 60px 0;
@@ -64,28 +107,46 @@ h3 {
 /* mobile */
 @media (max-width: 767px) {
   header {
-    background-color: #2a363b;
-    color: #f2f2f2;
-    padding: 2rem;
     position: sticky;
-    top: 0%;
+    top: 0;
+    width: 100%;
+    color: #f2f2f2;
+    z-index: 50;
+    scroll-snap-stop: normal;
+    background-color: #181818;
   }
   h1 {
-    font-size: 3rem;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  h3 {
+    background-color: #181818;
+    width: fit-content;
+    scroll-snap-type: proximity;
+    padding: 15px 30px 0 0;
+    margin-top: 20px;
   }
   sup {
     font-size: 1.5rem;
+    color: #a7f3d0;
   }
-
+  .dropdown {
+    background-color: #f2f2f2;
+    box-shadow: none;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid #181818;
+  }
   .card-container {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    padding: 2rem;
+    padding: 0 0;
   }
   .card {
-    margin: 20px 0px 60px 20px;
-    padding: 0;
+    padding: 0 0 0 20px;
     width: -webkit-fill-available;
     flex-basis: 100%;
   }
@@ -95,6 +156,9 @@ h3 {
 }
 
 /* desktop */
+.list {
+  border-left: 1px solid #181818;
+}
 li {
   list-style-type: none;
   padding-top: 20px;
@@ -102,14 +166,16 @@ li {
 li a {
   color: #181818;
   font-family: "Archivo Narrow", sans-serif;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding: 3px 4px 3px 4px;
   text-decoration: none;
   transition: 300ms;
+  padding-left: 10px;
 }
 li a:hover {
   background-color: #181818;
   color: #f2f2f2;
-  padding: 3px 12px 3px 4px;
+  padding: 3px 60px 3px 4px;
   transition: 400ms;
+  padding-left: 10px;
 }
