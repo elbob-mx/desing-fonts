@@ -73,21 +73,27 @@ header {
   display: flex;
   flex-direction: row;
   row-gap: 20px;
-  column-gap: 20px;
+  column-gap: 50px;
   flex-wrap: wrap;
   justify-content: center;
   border-bottom: 1px solid #181818;
   border-top: 1px solid #181818;
   height: auto;
-  transition: opacity 50%, transform 300ms;
-  padding: 3rem 0;
+  padding: 3rem 2rem;
 }
 .dropdown-menu a {
   text-decoration: none;
   font-family: "Archivo", sans-serif;
   font-weight: 700;
   color: #181818;
-  font-size: 2rem;
+  font-size: 1.5rem;
+  width: fit-content;
+  padding: 3px 8px;
+}
+.dropdown-menu a:hover {
+  background-color: #181818;
+  color: #f2f2f2;
+  padding: 3px 8px;
 }
 h1 {
   font-family: "Archivo", sans-serif;
@@ -166,6 +172,13 @@ h3 {
   .dropdown-hover {
     border: none;
     width: 100%;
+  }
+  .dropdown-menu {
+    width: 100px;
+  }
+  .dropdown-menu a {
+    width: 100%;
+    font-size: 1.5rem;
   }
   .card-container {
     display: flex;
